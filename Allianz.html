@@ -224,8 +224,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Definir o valor do campo de entrada
-    eventIdInput.value = data.trim(); // Valor padrão
+ // Função para carregar o Event ID do arquivo
+    function carregarEventId() {
+        fetch('id.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar o arquivo');
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Atribui o valor do arquivo ao campo de entrada
+                eventIdInput.value = data.trim(); // Remover espaços extras
+                atualizarLinks(); // Atualiza os links com o valor lido
+            })
+            .catch(error => {
+                console.error('Erro ao ler o arquivo:', error);
+            });
+    }
+
+    // Carregar o Event ID ao carregar a página
+    carregarEventId();
 
     // Atualizar links com o valor padrão
     atualizarLinks();
