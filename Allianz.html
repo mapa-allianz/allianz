@@ -209,7 +209,7 @@
         <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=648" target="_blank" class="block-link-verde" style="top: 81.5%; left: 78%; width: 3%; height: 4%;">137</a>
         <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=649" target="_blank" class="block-link-verde" style="top: 83%; left: 74.7%; width: 2.4%; height: 4%;">138</a>
     </div>
-    <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
     const eventIdInput = document.getElementById('eventId');
 
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
- // Função para carregar o Event ID do arquivo
+    // Função para carregar o Event ID do arquivo
     function carregarEventId() {
         fetch('id.txt')
             .then(response => {
@@ -246,14 +246,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Carregar o Event ID ao carregar a página
     carregarEventId();
 
-    // Atualizar links com o valor padrão
-    atualizarLinks();
-
     // Adicionar ouvinte de evento para atualizar links quando o valor do campo mudar
     eventIdInput.addEventListener('input', atualizarLinks);
 });
-
-	</script>
+</script>
 
 </body>
 </html>
