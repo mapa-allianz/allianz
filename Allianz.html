@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allianz Parque - Blocos</title>
+    <script>
+        function carregarEventId() {
+            // Ajuste do caminho para garantir que o arquivo será encontrado
+            fetch('id.txt')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao carregar o arquivo');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    const eventIdInput = document.getElementById('eventId');
+                    eventIdInput.value = data.trim(); // Adiciona o valor do arquivo ao campo de input
+                })
+                .catch(error => console.error('Erro ao ler o arquivo:', error));
+        }
+
+        window.onload = carregarEventId; // Carrega o Event ID ao carregar a página
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -100,7 +119,7 @@
 <body>
     <h1>Allianz Parque - Blocos</h1>
     <div class="form-container">
-        <input type="text" id="eventId" value="20718" placeholder="Digite o Event ID">
+        <input type="text" id="eventId" placeholder="Digite o Event ID">
         <button onclick="atualizarLinks()">Atualizar</button>
     </div>
     <div class="stadium-map">
@@ -206,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Definir o valor do campo de entrada
-    eventIdInput.value = "20718"; // Valor padrão
+    eventIdInput.value = "20691"; // Valor padrão
 
     // Atualizar links com o valor padrão
     atualizarLinks();
