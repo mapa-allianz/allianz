@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allianz Parque - Blocos</title>
+    <script>
+        function carregarEventId() {
+            // Ajuste do caminho para garantir que o arquivo será encontrado
+            fetch('id.txt')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao carregar o arquivo');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    const eventIdInput = document.getElementById('eventId');
+                    eventIdInput.value = data.trim(); // Adiciona o valor do arquivo ao campo de input
+                })
+                .catch(error => console.error('Erro ao ler o arquivo:', error));
+        }
+
+        window.onload = carregarEventId; // Carrega o Event ID ao carregar a página
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 16px;
+            color: #333;
+        }
+        .form-container {
+            margin: 1px 0;
+        }
+        .form-container input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+        .stadium-map {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .block-link-azul {
+            position: absolute;
+            display: block;
+            border: 2px solid blue;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 14px;
+            line-height: 1.5;
+            border-radius: 4px;
+        }
+        .stadium-map img {
+            width: 100%;
+            border-radius: 10px;
+        }        .block-link {
+            position: absolute;
+            display: block;
+            border: 2px solid red;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .block-link-roxo {
+            position: absolute;
+            display: block;
+            border: 2px solid purple;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .block-link-verde {
+            position: absolute;
+            display: block;
+            border: 2px solid green;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .block-link-ouro {
+            position: absolute;
+            display: block;
+            border: 2px solid gold;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Allianz Parque - Blocos</h1>
+    <div class="form-container">
+        <input type="text" id="eventId" placeholder="Digite o Event ID">
+        <button onclick="atualizarLinks()">Atualizar</button>
+    </div>
+    <div class="stadium-map">
+        <img src="MAPA_VISAO_PARCIAL.png" alt="Allianz Parque"> 
+		<!-- SUPERIORES -->
+		<!-- SUPERIOR OESTE -->
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=651" target="_blank" class="block-link-verde" style="top: 92%; left: 75.5%; width: 3%; height: 4%;">501</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=652" target="_blank" class="block-link-verde" style="top: 92%; left: 69%; width: 4%; height: 4%;">502</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=653" target="_blank" class="block-link-verde" style="top: 92%; left: 61%; width: 4%; height: 4%;">503</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=654" target="_blank" class="block-link-verde" style="top: 92%; left: 51.5%; width: 5%; height: 4%;">504</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=656" target="_blank" class="block-link-verde" style="top: 92%; left: 35%; width: 5%; height: 4%;">506</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=657" target="_blank" class="block-link-verde" style="top: 92%; left: 31%; width: 2%; height: 3%;">507</a>
+		<!-- SUPERIOR NORTE -->
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=658" target="_blank" class="block-link-azul" style="top: 90%; left: 26%; width: 4%; height: 4%;">508</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=659" target="_blank" class="block-link-azul" style="top: 86%; left: 20%; width: 4%; height: 4%;">509</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=660" target="_blank" class="block-link-azul" style="top: 79%; left: 13%; width: 4%; height: 4%;">510</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=661" target="_blank" class="block-link-azul" style="top: 72%; left: 9%; width: 4%; height: 4%;">511</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=662" target="_blank" class="block-link-azul" style="top: 62%; left: 5%; width: 4%; height: 4%;">512</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=663" target="_blank" class="block-link-azul" style="top: 52%; left: 3%; width: 4%; height: 4%;">513</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=664" target="_blank" class="block-link-azul" style="top: 43%; left: 3%; width: 4%; height: 4%;">514</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=665" target="_blank" class="block-link-azul" style="top: 33%; left: 5%; width: 4%; height: 4%;">515</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=666" target="_blank" class="block-link-azul" style="top: 24%; left: 8%; width: 4%; height: 4%;">516</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=667" target="_blank" class="block-link-azul" style="top: 17%; left: 14%; width: 3%; height: 3%;">517</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=668" target="_blank" class="block-link-azul" style="top: 9%; left: 20%; width: 4%; height: 4%;">518</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=669" target="_blank" class="block-link-azul" style="top: 6%; left: 25.5%; width: 3%; height: 4%;">519</a>
+		<!-- SUPERIOR LESTE -->
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=670" target="_blank" class="block-link-roxo" style="top: 5%; left: 30%; width: 2%; height: 3%;">520</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=671" target="_blank" class="block-link-roxo" style="top: 3%; left: 35%; width: 4%; height: 4%;">521</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=672" target="_blank" class="block-link-roxo" style="top: 2.5%; left: 43%; width: 4%; height: 4%;">522</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=673" target="_blank" class="block-link-roxo" style="top: 2.5%; left: 51.5%; width: 4%; height: 4%;">523</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=674" target="_blank" class="block-link-roxo" style="top: 2.5%; left: 60%; width: 4%; height: 4%;">524</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=675" target="_blank" class="block-link-roxo" style="top: 2.5%; left: 68%; width: 4%; height: 4%;">525</a>
+		<!-- SUPERIOR SUL -->
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=676" target="_blank" class="block-link-verde" style="top: 2.5%; left: 74.5%; width: 3%; height: 4%;">526</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=677" target="_blank" class="block-link-verde" style="top: 4%; left: 79%; width: 3%; height: 4%;">527</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=678" target="_blank" class="block-link-verde" style="top: 8%; left: 84%; width: 4%; height: 4%;">528</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=679" target="_blank" class="block-link-verde" style="top: 16%; left: 90%; width: 4%; height: 4%;">529</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=680" target="_blank" class="block-link-verde" style="top: 26%; left: 92.5%; width: 4%; height: 4%;">530</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=681" target="_blank" class="block-link-verde" style="top: 36.5%; left: 94%; width: 4%; height: 4%;">531</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=682" target="_blank" class="block-link-verde" style="top: 47%; left: 94.5%; width: 4%; height: 4%;">532</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=683" target="_blank" class="block-link-verde" style="top: 58%; left: 94%; width: 4%; height: 4%;">533</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=684" target="_blank" class="block-link-verde" style="top: 68%; left: 93%; width: 4%; height: 4%;">534</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=685" target="_blank" class="block-link-verde" style="top: 78%; left: 90.5%; width: 4%; height: 4%;">535</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=686" target="_blank" class="block-link-verde" style="top: 87%; left: 85%; width: 4%; height: 4%;">536</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=687" target="_blank" class="block-link-verde" style="top: 91%; left: 80%; width: 3%; height: 4%;">537</a>
+        <!-- INFERIORES -->
+        <!-- CENTRAL OESTE -->
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=650" target="_blank" class="block-link-ouro" style="top: 83%; left: 70.7%; width: 3%; height: 4%;">101</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=613" target="_blank" class="block-link-ouro" style="top: 83%; left: 64%; width: 5%; height: 4%;">102</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=614" target="_blank" class="block-link-ouro" style="top: 83%; left: 56%; width: 5%; height: 4%;">103</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=615" target="_blank" class="block-link-ouro" style="top: 83%; left: 48%; width: 5%; height: 4%;">104</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=616" target="_blank" class="block-link-ouro" style="top: 83%; left: 40%; width: 5%; height: 4%;">105</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=617" target="_blank" class="block-link-ouro" style="top: 83%; left: 36.2%; width: 2%; height: 4%;">106</a>
+        <!-- GOL NORTE -->
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=618" target="_blank" class="block-link-azul" style="top: 82%; left: 33.3%; width: 2%; height: 4%;">107</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=619" target="_blank" class="block-link-azul" style="top: 80%; left: 28%; width: 4%; height: 4%;">108</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=620" target="_blank" class="block-link-azul" style="top: 75.5%; left: 22%; width: 4%; height: 4%;">109</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=621" target="_blank" class="block-link-azul" style="top: 70%; left: 17%; width: 4%; height: 4%;">110</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=622" target="_blank" class="block-link-azul" style="top: 64%; left: 13%; width: 4%; height: 4%;">111</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=623" target="_blank" class="block-link-azul" style="top: 56%; left: 10.5%; width: 4%; height: 4%;">112</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=624" target="_blank" class="block-link-azul" style="top: 48%; left: 9.5%; width: 4%; height: 4%;">113</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=625" target="_blank" class="block-link-azul" style="top: 40%; left: 10%; width: 4%; height: 4%;">114</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=626" target="_blank" class="block-link-azul" style="top: 31.5%; left: 12%; width: 4%; height: 4%;">115</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=627" target="_blank" class="block-link-azul" style="top: 25%; left: 15%; width: 4%; height: 4%;">116</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=628" target="_blank" class="block-link-azul" style="top: 21%; left: 21%; width: 4%; height: 4%;">117</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=629" target="_blank" class="block-link-azul" style="top: 17%; left: 27%; width: 4%; height: 4%;">118</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=630" target="_blank" class="block-link-azul" style="top: 15%; left: 32%; width: 2%; height: 4%;">119</a>
+        <!-- CENTRAL LESTE -->
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=631" target="_blank" class="block-link-roxo" style="top: 14%; left: 35.5%; width: 2%; height: 4%;">120</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=632" target="_blank" class="block-link-roxo" style="top: 13%; left: 39%; width: 5%; height: 4%;">121</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=633" target="_blank" class="block-link-roxo" style="top: 13%; left: 46.5%; width: 5%; height: 4%;">122</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=634" target="_blank" class="block-link-roxo" style="top: 13%; left: 55%; width: 5%; height: 4%;">123</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=635" target="_blank" class="block-link-roxo" style="top: 13%; left: 63.5%; width: 5%; height: 4%;">124</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=636" target="_blank" class="block-link-roxo" style="top: 13%; left: 69.8%; width: 2%; height: 4%;">125</a>
+        <!-- GOL SUL -->
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=637" target="_blank" class="block-link-verde" style="top: 12.5%; left: 73%; width: 3%; height: 4%;">126</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=638" target="_blank" class="block-link-verde" style="top: 14%; left: 78%; width: 4%; height: 4%;">127</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=639" target="_blank" class="block-link-verde" style="top: 20%; left: 82%; width: 4%; height: 3%;">128</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=640" target="_blank" class="block-link-verde" style="top: 25.3%; left: 83.3%; width: 4%; height: 2%;">129</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=641" target="_blank" class="block-link-verde" style="top: 28.5%; left: 83.7%; width: 4%; height: 2%;">130</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=642" target="_blank" class="block-link-verde" style="top: 33%; left: 84.5%; width: 5%; height: 5%;">131</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=643" target="_blank" class="block-link-verde" style="top: 42%; left: 85%; width: 5%; height: 5%;">132</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=644" target="_blank" class="block-link-verde" style="top: 52%; left: 85.5%; width: 5%; height: 5%;">133</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=645" target="_blank" class="block-link-verde" style="top: 62%; left: 85%; width: 5%; height: 5%;">134</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=646" target="_blank" class="block-link-verde" style="top: 70%; left: 84%; width: 5%; height: 5%;">135</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=647" target="_blank" class="block-link-verde" style="top: 77.3%; left: 82%; width: 4%; height: 4%;">136</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=648" target="_blank" class="block-link-verde" style="top: 81.5%; left: 78%; width: 3%; height: 4%;">137</a>
+        <a href="https://ingressospalmeiras.com.br/Stadium/Index?eventId=20691&sectorId=649" target="_blank" class="block-link-verde" style="top: 83%; left: 74.7%; width: 2.4%; height: 4%;">138</a>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const eventIdInput = document.getElementById('eventId');
+
+    // Função para atualizar os links com o novo eventId
+    function atualizarLinks() {
+        const eventId = eventIdInput.value;
+        const links = document.querySelectorAll('.block-link-azul, .block-link-verde, .block-link-roxo, .block-link-ouro');
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            const newHref = href.replace(/\?eventId=\d+/, `?eventId=${eventId}`);
+            link.setAttribute('href', newHref);
+        });
+    }
+
+    // Função para carregar o Event ID do arquivo
+    function carregarEventId() {
+        fetch('id.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar o arquivo');
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Atribui o valor do arquivo ao campo de entrada
+                eventIdInput.value = data.trim(); // Remover espaços extras
+                atualizarLinks(); // Atualiza os links com o valor lido
+            })
+            .catch(error => {
+                console.error('Erro ao ler o arquivo:', error);
+            });
+    }
+
+    // Carregar o Event ID ao carregar a página
+    carregarEventId();
+
+    // Adicionar ouvinte de evento para atualizar links quando o valor do campo mudar
+    eventIdInput.addEventListener('input', atualizarLinks);
+});
+</script>
+
+</body>
+</html>
