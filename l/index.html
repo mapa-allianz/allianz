@@ -151,6 +151,13 @@
                 assentoSelect.append('<option value="' + i + '">' + i + '</option>');
             }
 
+            // Preenche fileira e assento com valores aleatórios
+            var fileiraAleatoria = fileiraSelect.find('option:not(:first)').eq(Math.floor(Math.random() * (fileiraSelect.find('option:not(:first)').length))).val();
+            fileiraSelect.val(fileiraAleatoria);
+
+            var assentoAleatorio = assentoSelect.find('option:not(:first)').eq(Math.floor(Math.random() * (assentoSelect.find('option:not(:first)').length))).val();
+            assentoSelect.val(assentoAleatorio);
+
             $('#setor').trigger('change'); // Aciona o evento change no carregamento para preencher o bloco inicial
         });
     </script>
