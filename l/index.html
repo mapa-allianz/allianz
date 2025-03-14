@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preencha os dados</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        select[readonly] {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <form id="dadosForm" action="ingressos.html" method="GET">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome"><br><br>
+
+        <label for="cpf">CPF:</label><br>
+        <input type="text" id="cpf" name="cpf"><br><br>
+
+        <label for="apelido">Apelido:</label><br>
+        <input type="text" id="apelido" name="apelido" readonly><br><br>
+
+        <label for="evento">Evento:</label><br>
+        <input type="text" id="evento" name="evento" value="Palmeiras x Corinthians" readonly><br><br>
+
+        <label for="dataHora">Data e Hora:</label><br>
+        <input type="text" id="dataHora" name="dataHora" value="2025-03-16 18:30" readonly><br><br>
+
+        <label for="setor">Setor:</label><br>
+        <select id="setor" name="setor">
+            <option value="GOL SUL" selected>GOL SUL</option>
+            <option value="SUPERIOR SUL">SUPERIOR SUL</option>
+            <option value="SUPERIOR OESTE">SUPERIOR OESTE</option>
+            <option value="CENTRAL OESTE">CENTRAL OESTE</option>
+        </select><br><br>
+
+        <label for="bloco">Bloco:</label><br>
+        <select id="bloco" name="bloco" readonly>
+            <option value="">Selecione o setor primeiro</option>
+        </select><br><br>
+
+        <label for="fileira">Fileira:</label><br>
+        <select id="fileira" name="fileira" readonly>
+            <option value="">Selecione a fileira</option>
+        </select><br><br>
+
+        <label for="assento">Assento:</label><br>
+        <select id="assento" name="assento" readonly>
+            <option value="">Selecione o assento</option>
+        </select><br><br>
+
+        <input type="submit" value="Gerar">
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $('#cpf').mask('000.000.000-00');
+
+            $('#nome').on('input', function() {
+                var nomeCompleto = $(this).val();
+                var primeiroNome = nomeCompleto.split(' ')[0];
+                $('#apelido').val(primeiroNome);
+            });
+
+            $('#setor').on('change', function() {
+                var setorSelecionado = $(this).val();
+                var blocoSelect = $('#bloco');
+                blocoSelect.empty(); // Limpa as opções existentes
+
+                if (setorSelecionado === 'SUPERIOR SUL') {
+                    for (var i = 526; i <= 537; i++) {
+                        blocoSelect.append('<option value="' + i + '">' + i + '</option>');
+                    }
+                } else if (setorSelecionado === 'SUPERIOR OESTE') {
+                    for (var i = 501; i <= 507; i++) {
+                        if (i !== 505) {
+                            blocoSelect.append('<option value="' + i + '">' + i + '</option>');
+                        }
+                    }
+                } else if (setorSelecionado === 'GOL SUL') {
+                    for (var i = 126; i <= 138; i++) {
+                        blocoSelect.append('<option value="' + i + '">' + i + '</option>');
+                    }
+                } else if (setorSelecionado === 'CENTRAL OESTE') {
+                    for (var i = 101; i <= 106; i++) {
+                        blocoSelect.append('<option value="' + i + '">' + i + '</option>');
+                    }
+                }
+            });
+
+            var fileiraSelect = $('#fileira');
+            var letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            for (var i = 0; i < letras.length; i++) {
+                fileiraSelect.append('<option value="' + letras[i] + '">' + letras[i] + '</option>');
+            }
+            for (var i = 0; i < letras.substring(0, 8).length; i++) {
+                fileiraSelect.append('<option value="' + letras[i] + letras[i] + '">' + letras[i] + letras[i] + '</option>');
+            }
+
+            var assentoSelect = $('#assento');
+            for (var i = 1; i <= 30; i++) {
+                assentoSelect.append('<option value="' + i + '">' + i + '</option>');
+            }
+
+            $('#setor').trigger('change'); // Aciona o evento change no carregamento para preencher o bloco inicial
+        });
+    </script>
+</body>
+</html>
