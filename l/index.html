@@ -59,12 +59,12 @@
     </style>
 </head>
 <body>
-    <form id="dadosForm" action="Ingressos.html" method="GET">
+    <form id="dadosForm" action="ingressos.html" method="GET">
         <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome"><br><br>
+        <input type="text" id="nome" name="nome" required><br><br>
 
         <label for="cpf">CPF:</label><br>
-        <input type="text" id="cpf" name="cpf"><br><br>
+        <input type="text" id="cpf" name="cpf" required><br><br>
 
         <label for="apelido">Apelido:</label><br>
         <input type="text" id="apelido" name="apelido" readonly><br><br>
@@ -76,7 +76,7 @@
         <input type="text" id="dataHora" name="dataHora" value="2025-03-16 18:30" readonly><br><br>
 
         <label for="setor">Setor:</label><br>
-        <select id="setor" name="setor">
+        <select id="setor" name="setor" required>
             <option value="GOL SUL" selected>GOL SUL</option>
             <option value="SUPERIOR SUL">SUPERIOR SUL</option>
             <option value="SUPERIOR OESTE">SUPERIOR OESTE</option>
@@ -84,17 +84,17 @@
         </select><br><br>
 
         <label for="bloco">Bloco:</label><br>
-        <select id="bloco" name="bloco" readonly>
+        <select id="bloco" name="bloco" readonly required>
             <option value="">Selecione o setor primeiro</option>
         </select><br><br>
 
         <label for="fileira">Fileira:</label><br>
-        <select id="fileira" name="fileira" readonly>
+        <select id="fileira" name="fileira" readonly required>
             <option value="">Selecione a fileira</option>
         </select><br><br>
 
         <label for="assento">Assento:</label><br>
-        <select id="assento" name="assento" readonly>
+        <select id="assento" name="assento" readonly required>
             <option value="">Selecione o assento</option>
         </select><br><br>
 
