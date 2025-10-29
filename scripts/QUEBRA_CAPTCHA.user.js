@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         QUEBRA CAPTCHA 1.0
+// @name         QUEBRA CAPTCHA 1.1
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  Monitora assentos e redireciona automaticamente quando disponíveis
