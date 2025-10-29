@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         QUEBRA CAPTCHA 1.1
+// @name         QUEBRA CAPTCHA 1.0
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.0
 // @description  Monitora assentos e redireciona automaticamente quando disponíveis
 // @author       Você
 // @match        https://ingressospalmeiras.com.br/Stadium/Index?*
@@ -10,7 +10,7 @@
 // @updateURL    https://mapa-allianz.github.io/allianz/scripts/QUEBRA_CAPTCHA.user.js
 // @downloadURL  https://mapa-allianz.github.io/allianz/scripts/QUEBRA_CAPTCHA.user.js
 // ==/UserScript==
-//oi eu sou o goku 2
+
 async function clicarIniciarEAguardeAudio() {
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
