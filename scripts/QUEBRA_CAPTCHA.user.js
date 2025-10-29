@@ -10,7 +10,7 @@
 // @updateURL    https://mapa-allianz.github.io/allianz/scripts/QUEBRA_CAPTCHA.user.js
 // @downloadURL  https://mapa-allianz.github.io/allianz/scripts/QUEBRA_CAPTCHA.user.js
 // ==/UserScript==
-
+//oi eu sou o goku
 async function clicarIniciarEAguardeAudio() {
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
